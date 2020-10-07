@@ -9,9 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
-      NavbarComponent
+    NavbarComponent
    ],
   imports: [
     BrowserModule,
