@@ -16,7 +16,7 @@ export class TableGeneratorComponent {
     private readonly fhModelService: FhModelService
   ) {
     // TEST START (Loading json example timetable)
-    this.urlInput = 'https://ws.inf.fh-dortmund.de/fbws/current/rest/CourseOfStudy/INPBPI/2/Events?Accept=application/json&studentSet=*';
+    this.urlInput = 'https://ws.inf.fh-dortmund.de/fbws/current/rest/CourseOfStudy/STDBSW/1/Events?Accept=application/json&studentSet=*';
     this.onSubmit();
     this.urlInput = '';
     // TEST END
@@ -34,6 +34,17 @@ export class TableGeneratorComponent {
 
   private addModules(fhModuls: FhModul[]): void {
     this.tables.push(fhModuls);
+  }
+
+  public onBuild(): void {
+    const buildTable: FhModul[] = [];
+
+    this.tables.forEach(table => {
+      const selectModuls = table.filter(m => m.select);
+      buildTable.push(...selectModuls);
+    });
+
+    console.log(buildTable);
   }
 }
 
