@@ -5,7 +5,7 @@
     <th> {{ time.toString() }}</th>
 
     <th
-      *ngFor="let fhModul of getModuls('Mon', time.toJsonFormat())"
+      *ngFor="let fhModul of getModuls(time.toJsonFormat())"
       attr.rowspan="{{ fhModul.timeSlotDuration }}"
       (click)="fhModul.select = !fhModul.select"
       [class.table-success]="fhModul.select"

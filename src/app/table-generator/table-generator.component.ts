@@ -12,6 +12,10 @@ export class TableGeneratorComponent {
 
   public urlInput: string;
 
+  public days: string[] = [ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+
+  public selectDay: string = this.days[0];
+
   constructor(
     private readonly fhModelService: FhModelService
   ) {
@@ -43,8 +47,21 @@ export class TableGeneratorComponent {
       const selectModuls = table.filter(m => m.select);
       buildTable.push(...selectModuls);
     });
+  }
 
-    console.log(buildTable);
+  public setSelectDay(day: string): void {
+    this.selectDay = day;
+  }
+
+  public getTabelsFromDay(): Array<FhModul[]> {
+    const result: Array<FhModul[]> = [];
+
+    this.tables.forEach(modules => {
+      const toPushModuls = modules.filter(m => m.weekday === this.selectDay);
+      result.push(toPushModuls);
+    });
+
+    return result;
   }
 }
 

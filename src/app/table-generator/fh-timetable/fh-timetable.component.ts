@@ -30,8 +30,8 @@ export class FhTimetableComponent {
 
   constructor() { }
 
-  public getModuls(weekday: string, timeBegin: string): FhModul[] {
-    return this.moduls.filter(m => m.timeBegin === timeBegin && m.weekday === weekday);
+  public getModuls(timeBegin: string): FhModul[] {
+    return this.moduls.filter(m => m.timeBegin === timeBegin);
   }
 }
 
