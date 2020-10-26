@@ -24,9 +24,9 @@ export class TableGeneratorComponent {
     private readonly fhModelService: FhModelService
   ) {
     // TEST START (Loading json example timetable)
-    this.urlInput = 'https://ws.inf.fh-dortmund.de/fbws/current/rest/CourseOfStudy/STDBSW/1/Events?Accept=application/json&studentSet=*';
-    this.onSubmit();
-    this.urlInput = '';
+    // this.urlInput = 'https://ws.inf.fh-dortmund.de/fbws/current/rest/CourseOfStudy/STDBSW/1/Events?Accept=application/json&studentSet=*';
+    // this.onSubmit();
+    // this.urlInput = '';
     // TEST END
   }
 
