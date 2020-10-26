@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prod-build-dev": "ng build --prod --build-optimizer"
+    "prod-build": "ng build --prod --build-optimizer"
   },
   "private": true,
   "dependencies": {
