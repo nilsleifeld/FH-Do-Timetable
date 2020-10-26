@@ -15,7 +15,6 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li *ngFor="let day of days" class="nav-item">
-          <!-- active -->
           <a (click)="setSelectDay(day)" class="nav-link" [class.active]="day == selectDay">{{ day }}</a>
         </li>
       </ul>
@@ -29,6 +28,15 @@
       <p>V = Vorlesung; SV = seminaristische Vorlesung; S = Seminar; Ü = Übung; P = Praktikum; T = Tutorium</p>
       <button (click)="onBuild()" type="button" class="btn btn-primary btn-lg">Build</button>
     </div>
+  </div>
+
+  <div *ngIf="buildTable != null">
+    <div id="timetable-build" *ngFor="let table of getTableWeekFromBuild(); index as i;">
+      <h1>{{ days[i] }}</h1>
+      <app-fh-timetable  [moduls]="table"></app-fh-timetable>
+    </div>
+    
+    <button (click)="downloadTimetable()" type="button" class="btn btn-primary btn-lg">Download</button>
   </div>
 </div>
 
